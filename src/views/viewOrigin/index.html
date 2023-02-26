@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <p>{{ a }}</p>
+    <button class="btn">测试</button>
+  </div>
+  <script type="module">
+    import Vue from "../src/index.js";
+    let vm = new Vue({
+      el: "#app",
+      // router,
+      // store,
+      data() {
+        return {
+          a: 1,
+          b: 2,
+          c: {
+            test: {
+              b: 22,
+            },
+            ccs: 1,
+          },
+          d: [1, 2, 3],
+        };
+      },
+      // template: `<div id="a">hello {{a}}</div>`,
+    });
+    let oBtn = document.getElementsByClassName("btn")[0];
+    // setInterval(() => {
+    //    vm.a++;
+    // }, 1000);
+    console.log(vm._data);
+    vm.b = 333;
+    vm.d.push(4, 5);
+    console.log(vm.$options.data());
+    let obj = {};
+    Object.defineProperty(obj, "t", {
+      get() {
+        console.log("测试");
+        return 1;
+      },
+      set(newValue) {
+        return newValue;
+      },
+    });
+    console.log(obj);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/src/assets/images/login-bg.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Essay</title>
+    <style>
+      #Loading {
+        top: 45%;
+        left: 48%;
+        position: absolute;
+        -webkit-transform: translateY(-50%) translateX(-50%);
+        transform: translateY(-50%) translateX(-50%);
+        z-index: 100;
+      }
+      @-webkit-keyframes ball-beat {
+        50% {
+          opacity: 0.2;
+          -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+        }
+
+        100% {
+          opacity: 1;
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+
+      @keyframes ball-beat {
+        50% {
+          opacity: 0.2;
+          -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+        }
+
+        100% {
+          opacity: 1;
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+
+      .ball-beat {
+        display: flex;
+        align-items: center;
+      }
+
+      .ball-beat > div.round {
+        background-color: #71ab4c;
+        width: 10px;
+        height: 10px;
+        border-radius: 100% !important;
+        margin: 2px;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation: ball-beat 0.7s 0s infinite linear;
+        animation: ball-beat 0.7s 0s infinite linear;
+      }
+      .ball-beat > div:nth-child(2n-1) {
+        -webkit-animation-delay: 0.35s !important;
+        animation-delay: 0.35s !important;
+      }
+
+      .loader-inner > .text {
+        color: #71ab4c;
+        margin-right: 20px;
+        font-weight: bold;
+        font-size: 24px;
+      }
+    </style>
+    <script>
+      // 白屏时间(FCP: First Contentful Paint)：从输入网址,到页面开始显示内容的时间;
+      // 首屏时间：从输入网址,到首屏页面内容渲染完毕的时间;
+      var a = "background: #4565cb ; color: #fff";
+      console.log(
+        `%c=====================白屏时间: ${
+          new Date().getTime() - performance.timing.navigationStart
+        }=======================`,
+        a
+      );
+      window.onload = () => {
+        console.log(
+          `%c=====================首屏时间: ${
+            new Date().getTime() - performance.timing.navigationStart
+          }=======================`,
+          a
+        );
+      };
+    </script>
+  </head>
+
+  <body>
+    <div id="Loading">
+      <div class="loader-inner ball-beat">
+        <p class="text">正在加载中,请耐心等待</p>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+      </div>
+    </div>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

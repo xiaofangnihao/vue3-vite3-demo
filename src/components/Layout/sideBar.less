@@ -1,0 +1,103 @@
+//外套一个slidebar类。声明以下样式仅限slidebar的组件生效
+.sidebar-container {
+  transition: width 0.5s;
+  width: @sideBarWidth;
+  background: @sidebarBg!important;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1001;
+  overflow: hidden;
+
+  .navTitle {
+    display: flex;
+    justify-content: center;
+    color: @main-color;
+    margin: 20px 0 30px 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  // 被选中菜单项的类
+  .el-menu-item.is-active {
+    background-color: @menuActiveBg !important;
+    color: @menuActiveTextColor !important;
+  }
+  .horizontal-collapse-transition {
+    transition: 0s width ease-in-out, 0s padding-left ease-in-out,
+      0s padding-right ease-in-out;
+  }
+
+  .scrollbar-wrapper {
+    overflow-x: hidden !important;
+  }
+
+  .el-scrollbar__bar.is-vertical {
+    right: 0px;
+  }
+
+  .el-scrollbar {
+    height: 100%;
+  }
+
+  &.has-logo {
+    .el-scrollbar {
+      height: calc(100% - 50px);
+    }
+  }
+
+  .is-horizontal {
+    display: none;
+  }
+
+  .svg-icon {
+    margin-right: 16px;
+  }
+
+  .el-icon {
+    color: #d7d7d7;
+  }
+
+  .sub-el-icon {
+    margin-right: 12px;
+    margin-left: -2px;
+  }
+
+  // 菜单背景色
+  .el-menu {
+    border: none;
+    height: 100%;
+    width: 100% !important;
+    background: @menuBg !important;
+  }
+
+  // menu hover
+  .submenu-title-noDropdown,
+  // 子菜单背景色
+  .el-sub-menu__title {
+    color: @menuTextColor !important;
+    background-color: @menuBg !important;
+    &:hover {
+      color: @subMenuHoverTextColor !important;
+      background-color: @subMenuHoverBgColor !important;
+    }
+  }
+  .el-sub-menu__title i {
+    color: @menuTextColor !important;
+  }
+
+  .el-menu-item {
+    color: @menuTextColor !important;
+  }
+  // 鼠标移入时菜单项的样式
+  .el-menu-item:hover {
+    background-color: @subMenuHoverBgColor !important;
+    color: @subMenuHoverTextColor !important;
+  }
+
+  // 去除二级菜单第一项的padding
+  .el-menu-item-group__title {
+    padding: 0;
+  }
+}

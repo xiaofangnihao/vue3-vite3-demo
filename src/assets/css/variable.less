@@ -1,0 +1,75 @@
+// :root选择器匹配文档的根元素
+:root {
+  --main-color: #71ab4c;
+  --bg-color: #f9fbfc;
+  --text-color: #333;
+  --sidebar-bg-color: #fff;
+  --menu-bg-color: #fff;
+  --menu-text-color: #d6d6d6;
+  --menu-active-color: #fff;
+  --sub-menu-hover-color: #b3c69f;
+  --sub-menu-hover-bg-color: #fff;
+  --menu-active-text-color: #71ab4c;
+}
+
+:root[theme="dark"] {
+  --main-color: #3a5e49;
+  --bg-color: #f3f2ee;
+  --text-color: #3a5e49;
+  --sidebar-bg-color: #000;
+  --menu-bg-color: #000;
+  --menu-active-color: #000;
+  --sub-menu-hover-color: #3a5e49;
+  --sub-menu-hover-bg-color: #000;
+}
+
+:root[theme="blue"] {
+  --main-color: #ddd;
+  --bg-color: #f6f6f7;
+  --text-color: #333;
+  --sidebar-bg-color: linear-gradient(to top, #77add7, #74b8da, #71c2dc);
+  --menu-bg-color: linear-gradient(to top, #77add7, #74b8da, #71c2dc);
+  --menu-active-color: #94cde4;
+  --menu-active-text-color: #fff;
+  --sub-menu-hover-color: #fff;
+  --sub-menu-hover-bg-color: #94cde4;
+}
+
+:root[theme="green"] {
+  --main-color: #000;
+  --bg-color: #171729;
+  --text-color: #fff;
+  --sidebar-bg-color: linear-gradient(to top, #52946b, #5ca579, #63b386);
+  --menu-bg-color: linear-gradient(to top, #52946b, #5ca579, #63b386);
+  --menu-text-color: #ddd;
+  --menu-active-color: #fff;
+  --menu-active-text-color: #000;
+  --sub-menu-hover-color: #000;
+  --sub-menu-hover-bg-color: #fff;
+}
+
+:root[theme="greenAndBlue"] {
+  --main-color: #000;
+  --bg-color: #fefefe;
+  --text-color: #333;
+  --sidebar-bg-color: linear-gradient(to top, #40a3e5, #5ed0d3, #6aeac8);
+  --menu-bg-color: linear-gradient(to top, #40a3e5, #5ed0d3, #6aeac8);
+  --menu-text-color: #fff;
+  --menu-active-color: #fff;
+  --sub-menu-hover-color: #000;
+  --sub-menu-hover-bg-color: #fff;
+  --menu-active-text-color: #000;
+}
+
+:root[theme="image"] {
+  --main-color: #fff;
+  --bg-color: #fefefe;
+  --text-color: #fff;
+  --sidebar-bg-color: url("../images/avatar.jpg") no-repeat 100% 100%;
+  --menu-bg-color: url("../images/avatar.jpg") no-repeat 100% 100%;
+  --menu-text-color: #fff;
+  --menu-active-color: #fff;
+  --sub-menu-hover-color: #000;
+  --sub-menu-hover-bg-color: #fff;
+  --menu-active-text-color: #000;
+}

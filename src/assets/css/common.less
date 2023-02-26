@@ -1,0 +1,87 @@
+@numbers: 5, 10, 15, 20, 25, 30, 35, 40, 100;
+@fontSize: 12, 14, 16, 18, 20, 24, 30;
+@arrow: left, right, top, bottom;
+
+body,
+html {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+img {
+  width: 100%;
+}
+
+:deep .el-select {
+  width: 100%;
+}
+
+// 多行省略要设置在父级
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.flex {
+  display: flex;
+}
+
+.common-btn {
+  margin-top: 10px;
+  background-color: @main-color !important;
+  color: #fff !important;
+  border: 1px solid @main-color !important;
+}
+
+.dialog-btn {
+  border-color: @main-color !important;
+  background-color: @main-color !important;
+  color: #fff !important;
+}
+
+each(@arrow, {
+  .b-@{value} {
+    border-@{value}: 1px solid #eee;
+  }
+})
+  each(@fontSize, {
+  .font-@{value} {
+    font-size: @value*1px
+  }
+})
+  each(@numbers, {
+  .p-@{value} {
+    padding: @value*1px 
+  }
+
+  .pt-@{value} {
+    padding-top: @value*1px;
+  }
+  .pr-@{value} {
+    padding-right: @value*1px
+  }
+  .pb-@{value} {
+    padding-bottom: @value*1px 
+  }
+  .pl-@{value} {
+    padding-left: @value*1px
+  }
+
+  .m-@{value} {
+    padding: @value*1px 
+  }
+
+  .mt-@{value} {
+    margin-top: @value*1px;
+  }
+  .mr-@{value} {
+    padding-right: @value*1px
+  }
+  .mb-@{value} {
+    margin-bottom: @value*1px 
+  }
+  .ml-@{value} {
+    margin-left: @value*1px
+  }
+});
